@@ -49,8 +49,11 @@ int softMax(float prob[totalActions], float aBias[totalActions], float b1, Count
             if(lastArm < (totalActions-1)) {
                 prob[lastArm+1] *= exp(b1);
             }
-            prob[lastArm] = 0;
         }
+    }
+	
+    if(lastArm >= 0) {
+        prob[lastArm] = 0;
     }
     
     double sumVal=0;
